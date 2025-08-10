@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abby Jane — Links</title>
+  <meta name="description" content="Abby Jane — quick links and contact." />
+  <meta property="og:title" content="Abby Jane — Links" />
+  <meta property="og:description" content="Quick links, contact, and keys." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root { --bg:#0b0c10; --card:#111317; --text:#eaeef2; --muted:#aab4c0; --acc:#6ee7b7; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 40px 20px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,.3); }
+    header { display: flex; gap: 16px; align-items: center; }
+    .avatar { width: 56px; height: 56px; border-radius: 50%; background: #1f2430; display: grid; place-items: center; font-weight: 700; }
+    h1 { font-size: 1.35rem; margin: 0; }
+    p.sub { margin: 6px 0 0; color: var(--muted); }
+    .links { display: grid; gap: 10px; margin: 22px 0; }
+    .links a { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); background: var(--card); border: 1px solid rgba(255,255,255,.08); padding: 12px 14px; border-radius: 12px; transition: transform .05s ease, background .2s ease; }
+    .links a:hover { transform: translateY(-1px); background: #151922; }
+    .badge { font-size: 1.1rem; width: 24px; text-align: center; }
+    .row { display:flex; gap:10px; flex-wrap: wrap; align-items: center; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .pill { border:1px solid rgba(255,255,255,.12); border-radius: 999px; padding:6px 10px; color: var(--muted); }
+    footer { margin-top: 16px; font-size: .9rem; color: var(--muted); text-align: center; }
+    .copy { cursor:pointer; border:1px solid rgba(255,255,255,.12); background: transparent; color: var(--text); border-radius:10px; padding:6px 10px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <div class="avatar">AJ</div>
+        <div>
+          <h1>Abby Jane</h1>
+          <p class="sub">Quick links & contact</p>
+        </div>
+      </header>
+
+      <nav class="links" aria-label="Primary links">
+        <a href="https://bsky.app/profile/YOUR_HANDLE" rel="me noopener" target="_blank"><span class="badge">🦋</span><span>Bluesky</span></a>
+        <a href="https://instagram.com/YOUR_HANDLE" rel="me noopener" target="_blank"><span class="badge">📷</span><span>Instagram</span></a>
+        <a href="mailto:you@yourdomain.com" rel="me"><span class="badge">✉️</span><span>Email</span></a>
+        <a href="https://github.com/YOUR_GH" rel="me noopener" target="_blank"><span class="badge">🐙</span><span>GitHub</span></a>
+        <!-- Add more as needed -->
+      </nav>
+
+      <section>
+        <h2 style="font-size:1.05rem;margin:14px 0 8px;">PGP</h2>
+        <div class="row">
+          <div class="pill mono" id="fingerprint">3A12 B9F4 8C99 7C1D 0AF1 1B92 6A1E 2D34 1123 4FA7</div>
+          <button class="copy" id="copyFp">Copy</button>
+          <a class="pill" href="publickey.asc" download>Download public key</a>
+        </div>
+      </section>
+
+      <section>
+        <h2 style="font-size:1.05rem;margin:14px 0 8px;">Tips</h2>
+        <div class="row">
+          <a class="pill" href="bitcoin:bc1qYOURADDRESS?label=Abby%20Jane&message=Thanks!">Bitcoin</a>
+          <a class="pill" href="lightning:lnbcYOURINVOICE">⚡ Lightning</a>
+          <!-- Or link to a dedicated page: tips.yourdomain.com -->
+        </div>
+      </section>
+
+      <footer>© <span id="y"></span> Abby Jane • Verify address/fingerprint before sending.</footer>
+    </div>
+  </div>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  document.getElementById('copyFp').addEventListener('click', async () => {
+    const t = document.getElementById('fingerprint').textContent.trim();
+    try { await navigator.clipboard.writeText(t); alert('PGP fingerprint copied'); }
+    catch { alert('Copy failed — select and copy manually.'); }
+  });
+</script>
+</body>
+</html>
