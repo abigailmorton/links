@@ -75,7 +75,17 @@ p.sub { margin: 6px 0 0; color: var(--muted); }
 }
 .links a:hover { transform: translateY(-1px); background: #151922; }
 
-.badge { font-size: 1.1rem; width: 24px; text-align: center; }
+.badge {
+  font-size: 1.1rem;
+  /* width: 24px;  <-- remove this */
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;            /* tiny space between emojis */
+  white-space: nowrap; /* keep them on one line */
+  line-height: 1;
+  text-align: center;
+}
+
 .row { display:flex; gap:10px; flex-wrap: wrap; align-items: center; }
 .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .pill { border:1px solid rgba(255,255,255,.12); border-radius: 999px; padding:6px 10px; color: var(--muted); }
