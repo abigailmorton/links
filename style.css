@@ -1,4 +1,8 @@
-:root { --bg:#0b0c10; --card:#111317; --text:#eaeef2; --muted:#aab4c0; --acc:#6ee7b7; }
+:root {  --bg:#f4ede4;      /* warm cream background */
+  --card:#ffffff;
+  --text:#372f2b;
+  --muted:#7c6b63;
+  --acc:#b7655b;     /* muted burgundy accent */}
 * { box-sizing: border-box; }
 
 body {
