@@ -90,6 +90,46 @@ p.sub { margin: 6px 0 0; color: var(--muted); }
   text-align: center;
 }
 
+.page.pgp .box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+}
+
+.page.pgp .cmd {
+  display: block;
+  padding: 0.75rem;
+  background: #111;
+  color: #fafafa;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+}
+
+.page.pgp .fingerprint {
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.page.pgp .copywrap {
+  position: relative;
+}
+
+.page.pgp button.copy {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: 0;
+  background: #333;
+  color: #fff;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.page.pgp button.copy:hover { background: #000; }
+
 .row { display:flex; gap:10px; flex-wrap: wrap; align-items: center; }
 .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .pill { border:1px solid rgba(255,255,255,.12); border-radius: 999px; padding:6px 10px; color: var(--muted); }
