@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Verify My PGP Key — Abby Jane Morton</title>
+
+<style>
+  body {
+    max-width: 780px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+    color: #111;
+    background: #fafafa;
+  }
+  h1, h2 { line-height: 1.2; }
+  code, pre {
+    background: #f1f1f1;
+    border-radius: 6px;
+    padding: 0.2em 0.4em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.95em;
+  }
+  pre {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  .box {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+  }
+  .cmd {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    background: #111;
+    color: #eaeaea;
+    border-radius: 6px;
+    font-family: ui-monospace, monospace;
+  }
+  .fingerprint {
+    font-weight: bold;
+    letter-spacing: 0.05em;
+  }
+  .copywrap {
+    position: relative;
+  }
+  button.copy {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border: 0;
+    background: #333;
+    color: #fff;
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  button.copy:hover { background: #000; }
+  .note {
+    font-size: 0.9em;
+    color: #444;
+  }
+  footer {
+    margin-top: 3rem;
+    font-size: 0.85em;
+    color: #666;
+  }
+</style>
+</head>
+
+<body>
+
+<h1>🔐 Verify My PGP Key</h1>
+
+<p>
+This page shows how to securely obtain and verify my OpenPGP public key.
+</p>
+
+<div class="box">
+<h2>Automatic (Recommended)</h2>
+<p>
+If you use GnuPG, fetch my key directly via Web Key Directory (WKD):
+</p>
+
+<div class="cmd">
+gpg --auto-key-locate clear,wkd --locate-keys abigail@cloverdalelane.com
+</div>
+
+<p class="note">
+This retrieves my key from my domain over HTTPS.
+</p>
+</div>
+
+<div class="box">
+<h2>Fingerprint</h2>
+<p>Always verify this fingerprint after import:</p>
+
+<pre class="fingerprint">
+BED8 CCA8 0155 7974 725B  E8D9 3423 957F 0559 2942
+</pre>
+</div>
+
+<div class="box">
+<h2>Copy my public key</h2>
+
+<div class="copywrap">
+<button class="copy" onclick="copyKey()">Copy</button>
+
+<pre id="pgpkey">
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+mDMEaQ7DBhYJKwYBBAHaRw8BAQdAe6LQwNk4EHjXA3110MlNdVS9VlLWeuIg+ycf
+tVRIZPy0LUFiYnkgSmFuZSBNb3J0b24gPGFiaWdhaWxAY2xvdmVyZGFsZWxhbmUu
+Y29tPoiZBBMWCgBBFiEEvtjMqAFVeXRyW+jZNCOVfwVZKUIFAmkOwwYCGwMFCQWk
+XJoFCwkIBwICIgIGFQoJCAsCBBYCAwECHgcCF4AACgkQNCOVfwVZKULYjgD+Onbh
+9Dr8ihuK4By8q3TwJ50SL6scuACvQzgrzr+nTkUBAIlGvyaYYAMwxGHdGy1ciaRE
+YzH/u1jpXtiUHg1Aj30MuDgEaQ7DBhIKKwYBBAGXVQEFAQEHQMmXrMqFLWtxGDZn
+iG6OeWPQaVxCU3fVzGiVQ8Z4UidVAwEIB4h+BBgWCgAmFiEEvtjMqAFVeXRyW+jZ
+NCOVfwVZKUIFAmkOwwYCGwwFCQWkXJoACgkQNCOVfwVZKUIgVAEA1//0NDyZ7MjY
+Cn1dUoZ00W7WZfEZJbU6mBTfzJOUhxcA/17CD6hpetLkDCxC9ONZ0zT1R3eEwWjr
+zqAk5j6G5esB
+=IUzw
+-----END PGP PUBLIC KEY BLOCK-----
+</pre>
+</div>
+
+</div>
+
+<div class="box">
+<h2>Direct download (optional)</h2>
+
+<p>
+You can also download my key directly:
+</p>
+
+<pre>
+https://cloverdalelane.com/.well-known/openpgpkey/hu/f86kbuefhgbza7z9g6s179w45dyi1jay
+</pre>
+
+<p>
+Import with:
+</p>
+
+<pre>
+gpg --import <filename>
+</pre>
+</div>
+
+<footer>
+<p>
+If you receive a message claiming to be from me and the fingerprint differs,
+treat it as suspicious.
+</p>
+<hr>
+<p>
+– Abby Jane Morton · abigail@cloverdalelane.com
+</p>
+</footer>
+
+<script>
+function copyKey() {
+  const text = document.getElementById("pgpkey").innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    alert("Public key copied to clipboard.");
+  });
+}
+</script>
+
+</body>
+</html>
