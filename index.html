@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -11,6 +11,8 @@
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="googlebot" content="noindex,nofollow,noarchive">
   <meta name="bingbot" content="noindex,nofollow,noarchive">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link rel="me" href="https://tech.lgbt/@abbyjane">'
   <link rel="icon" type="image/png" href="favicon.png">
@@ -19,7 +21,7 @@
   <div class="wrap">
     <div class="card">
       <header>
-        <img class="avatar" src="https://avatars.githubusercontent.com/u/225737586?v=4" alt=Abigail Jane>
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/225737586?v=4" alt="Abigail Jane">
         <div>
           <h1>Abby Jane</h1>
           <p class="sub">Quick links & contact</p>
@@ -27,41 +29,27 @@
       </header>
 
       <nav class="links" aria-label="Primary links">
-        <a href="https://bsky.app/profile/abbyjane.cloverdalelane.com"
-           rel="me noopener"
-           target="_blank">
-          <span class="badge">
-            <img src="https://raw.githubusercontent.com/abigailmorton/links/main/bsky.png"
-              alt="Bluesky"
-                       style="height:1em; width:1em; vertical-align:middle;">
-          </span>
-          <span>Bluesky</span>
-          </a>
-        <a href="https://www.tumblr.com/blog/lipglosscommunion"
-           rel="me noopener"
-           target="_blank">
-          <span class="badge">
-            <img src="https://raw.githubusercontent.com/abigailmorton/links/main/tumblr.png"
-              alt="Tumblr"
-                       style="height:1em; width:1em; vertical-align:middle;">
-          </span>
-          <span>Tumblr</span>
-          </a>
-        <a href="https://instagram.com/realabigail25" rel="me noopener" target="_blank"><span class="badge">📷</span><span>Instagram</span></a>
-        <a href="https://entropyjournal.cloverdalelane.com/" rel="me noopener" target="_blank"><span class="badge">📝</span><span>Blog</span></a>
+        <a href="https://bsky.app/profile/abbyjane.cloverdalelane.com" rel="me noopener" target="_blank"><span class="badge"><img src="bsky.png" alt="Bluesky" style="height:1em; width:1em; vertical-align:middle;"></span><span>Bluesky</span></a>
+        <a href="https://www.tumblr.com/blog/lipglosscommunion" rel="me noopener" target="_blank"><span class="badge"><img src="tumblr.png" alt="Tumblr" style="height:1em; width:1em; vertical-align:middle;"></span><span>Tumblr</span></a>
         <a href="mailto:abigail@cloverdalelane.com" rel="me"><span class="badge">✉️</span><span>Email</span></a>
-        <a href="https://github.com/abigailmorton" rel="me noopener" target="_blank"><span class="badge">🐙</span><span>GitHub</span></a>
-        <a href="https://tech.lgbt/@abbyjane" rel="me noopener" target="_blank"><span class="badge" aria-hidden="true"><span>🦣</span><span>Mastodon</span></a>
-        <!-- Add more as needed -->
+        <a href="https://instagram.com/realabigail25" rel="me noopener" target="_blank"><span class="badge"><img src="insta.png" alt="Instagram" style="height:1em; width:1em; vertical-align:middle;"></span><span>Instagram</span></a>
+        <a href="https://entropyjournal.cloverdalelane.com/" rel="me noopener" target="_blank"><span class="badge">📝</span><span>Blog</span></a>
+        <a href="https://github.com/abigailmorton" rel="me noopener" target="_blank"><span class="badge"><img src="github.png" alt="Github" style="height:1em; width:1em; vertical-align:middle;"></span><span>GitHub</span></a>
+        <a href="https://tech.lgbt/@abbyjane" rel="me noopener" target="_blank"><span class="badge"><img src="mastodon.png" alt="Mastodon" style="height:1em; width:1em; vertical-align:middle;"></span><span>Mastodon</span></a>
+        <a href="https://archive.cloverdalelane.com" rel="me noopener" target="_blank"><span class="badge"><img src="archive.png" alt="Archive" style="height:1em; width:1em; vertical-align:middle;"></span><span>Articles of Note</span></a>
+        <a href="verify-pgp.html" rel="me noopener" target="_blank"><span class="badge">🔐</span><span>My public PGP key</span></a>
+        
       </nav>
 
-   <section>
+<!--
+  <section>
   <h2 style="font-size:1.05rem;margin:14px 0 8px;">PGP</h2>
   <div class="row">
     <a class="pill" href="verify-pgp.html" target="_blank">Verify my public key</a>
     <a class="pill" href="abigail_public.asc" download>Download public key (.asc)</a>
   </div>
 </section>
+-->
 <!--
       <section>
         <h2 style="font-size:1.05rem;margin:14px 0 8px;">Tips</h2>
@@ -72,19 +60,43 @@
         </div>
       </section> 
 -->
-      <footer>© <span id="y"></span> Abby Jane <!--• Verify address/fingerprint before sending.</footer> -->
+<!--      <footer>© <span id="y"></span> Abby Jane  Verify address/fingerprint before sending.</footer>
     </div>
   </div>
+-->
 
-<script>
-const btn = document.getElementById('copyFp');
-if (btn) {
-  btn.addEventListener('click', async () => {
-    const t = document.getElementById('fingerprint').textContent.trim();
-    try { await navigator.clipboard.writeText(t); alert('PGP fingerprint copied'); }
-    catch { alert('Copy failed — select and copy manually.'); }
-  });
-}
-</script>
+				<p class="text-center"><small>&copy; Abby Jane 2025<br>
+				<a href="#privacyModal" data-toggle="modal" data-target="#privacyModal">privacy policy</a></small></p>	
+			</div>
+				
+			</div>
+			<div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">privacy policy.</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							  <span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<p>I do not want your data.</p>
+							<p>I am not a fae trickster.</p>
+							<p>What are you a cop?</p>
+							<p>If you're a cop you have to tell me otherwise it's entrapment.</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>	
+<script> const btn = document.getElementById('copyFp'); if (btn) {btn.addEventListener('click', async () => {const t = document.getElementById('fingerprint').textContent.trim(); try { await navigator.clipboard.writeText(t); alert('PGP fingerprint copied'); } catch { alert('Copy failed — select and copy manually.'); }});}</script>
 </body>
 </html>
