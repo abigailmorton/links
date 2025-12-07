@@ -4,7 +4,7 @@
   <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.6.0">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Verify My PGP Key — Abby Jane Morton</title><!-- Bootstrap -->
+  <title>Verify My PGP Key — Abby Jane</title><!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png"><!-- Robots -->
@@ -25,10 +25,13 @@
       <main>
         <div class="box">
           <h2>Automatic (Recommended)</h2>
-          <p class="text-justify">If you use GnuPG, fetch my key directly via Web Key Directory (WKD):</p>
-          <div class="cmd">
-            gpg --auto-key-locate clear,wkd --locate-keys abigail@cloverdalelane.com
-          </div>This retrieves my key from my domain over HTTPS.
+          <p class="text-justify">If you use GnuPG, fetch my key directly via Web Key Directory (WKD) <button class="copywrap" onclick="copyCmd()">Copy</button></h2></p>
+          <div>		
+			<pre id="gpgcmd">gpg --auto-key-locate clear,wkd --locate-keys abigail@cloverdalelane.com</pre>
+          </div>
+          <div>
+			  This retrieves my key from my domain over HTTPS.
+          </div>
           <p></p>
         </div>
         <div class="box">
@@ -39,7 +42,8 @@ BED8 CCA8 0155 7974 725B  E8D9 3423 957F 0559 2942
 </pre>
         </div>
         <div class="box">
-          <h2>Copy my public key <button class="copywrap" onclick="copyKey()">Copy</button></h2>
+          <h2>Copy my public key</h2>
+           <button class="copywrap" onclick="copyKey()">Copy</button>
           <hr>
           <pre id="pgpkey">
 -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -103,6 +107,7 @@ gpg --import &lt;filename&gt;
   </script> 
   <script>
   function copyKey() {const text = document.getElementById("pgpkey").innerText; navigator.clipboard.writeText(text).then(() => {alert("Public key copied to clipboard.");  });}
+  function copyCmd() {const text = document.getElementById("gpgcmd").innerText; navigator.clipboard.writeText(text).then(() => {alert("GPG command copied to clipboard.");  });}
   </script>
 </body>
 </html>
