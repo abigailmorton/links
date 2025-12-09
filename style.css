@@ -109,6 +109,7 @@ p.sub { margin: 6px 0 0; color: var(--muted); }
 
 .box {
   background: #fff;
+/*  background: linear-gradient(180deg, #fff, #fdf7f2); */
   border-radius: 1rem;
   padding: 1.25rem;
   margin: 0 0 1.2rem 0;
@@ -173,9 +174,86 @@ copy:hover { background: #000; }
   overflow-x: auto;
 }
 
+.section {
+  width: 100%;
+  margin-top: 1.25rem;
+}
+
+.section.box {
+  max-width: 100%;
+}
+
+.section.tips {
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin: 0 0 1.2rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(180deg, #fff, #fdf7f2);
+  border: 1px solid rgba(183,101,91,.15);
+}
+
+/* Overall CV content width */
+.cv {
+  max-width: 720px;
+  margin: 40px auto;
+  padding-left: 1.5rem;   /* one unified left edge */
+  padding-right: 1.5rem;
+}
+
+/* Header block */
+.cv-header {
+  display: block;          /* cancel the global flex */
+  margin-left: 0;     /* your left margin */
+}
+
+.cv-header .cv-name {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.cv-header .cv-line {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* The lines under the name */
+.cv-line {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Make sure links wrap nicely and don’t overflow */
+.cv-line a {
+  word-break: break-word;
+  text-decoration: none;
+}
+.cv-line a:hover {
+  text-decoration: underline;
+}
+
+/* Make bullet text and paragraphs align */
+.cv p {
+  margin-left: 0;
+}
+
+.cv ul {
+  padding-left: 1.2rem;   /* control bullet indent */
+}
+
+.cv li {
+  margin-left: 0;
+}
+
+
+
 .row { display:flex; gap:10px; flex-wrap: wrap; align-items: center; }
 .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-.pill { border:1px solid rgba(255,255,255,.12); border-radius: 999px; padding:6px 10px; color: var(--muted); }
+.pill { background: linear-gradient(180deg, #fff, #fdf7f2); border: 1px solid rgba(255,255,255,.12); border-radius: 999px; padding:6px 10px; color: var(--muted); }
 
 footer { margin-top: 16px; font-size: .9rem; color: var(--muted); text-align: center; }
 .copy { cursor:pointer; border:1px solid rgba(255,255,255,.12); background: transparent; color: var(--text); border-radius:10px; padding:6px 10px; }
