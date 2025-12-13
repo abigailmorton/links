@@ -1,51 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.6.0">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Verify My PGP Key — Abby Jane</title><!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png"><!-- Robots -->
-  <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="googlebot" content="noindex,nofollow,noarchive">
-  <meta name="bingbot" content="noindex,nofollow,noarchive">
-</head>
-<body>
-  <div class="wrap">
-    <div class="card">
-      <header>
-        <img class="avatar" src="https://avatars.githubusercontent.com/u/225737586?v=4" alt="Abigail Jane">
-        <div>
-          <h1>Abby Jane</h1>
-          <p class="sub">This page shows how to securely obtain and verify my OpenPGP public key.</p>
-        </div>
-      </header>
-      <main>
-        <div class="box">
-          <h2>Automatic (Recommended)</h2>
-          <p class="text-justify">If you use GnuPG, fetch my key directly via Web Key Directory (WKD) <button class="copywrap" onclick="copyCmd()">Copy</button></h2></p>
-          <div>		
-			<pre id="gpgcmd">gpg --auto-key-locate clear,wkd --locate-keys abigail@cloverdalelane.com</pre>
-          </div>
+  <head>
+    <meta
+      name="generator"
+      content="HTML Tidy for HTML5 for Linux version 5.6.0"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Verify My PGP Key — Abby Jane</title>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <!-- Robots -->
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <meta name="googlebot" content="noindex,nofollow,noarchive" />
+    <meta name="bingbot" content="noindex,nofollow,noarchive" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <header>
+          <img
+            class="avatar"
+            src="https://avatars.githubusercontent.com/u/225737586?v=4"
+            alt="Abigail Jane"
+          />
           <div>
-			  This retrieves my key from my domain over HTTPS.
+            <h1>Abby Jane</h1>
+            <p class="sub">
+              This page shows how to securely obtain and verify my OpenPGP
+              public key.
+            </p>
           </div>
-          <p></p>
-        </div>
-        <div class="box">
-          <h2>Fingerprint</h2>
-          <p class="text-justify">Always verify this fingerprint after import:</p>
-          <pre class="fingerprint">
+        </header>
+        <main>
+          <div class="box">
+            <h2>Automatic (Recommended)</h2>
+            <p class="text-justify">
+              If you use GnuPG, fetch my key directly via Web Key Directory
+              (WKD) <button class="copywrap" onclick="copyCmd()">Copy</button>
+            </p>
+            <div>
+              <pre id="gpgcmd">
+gpg --auto-key-locate clear,wkd --locate-keys abigail@cloverdalelane.com</pre
+              >
+            </div>
+            <div>This retrieves my key from my domain over HTTPS.</div>
+            <p></p>
+          </div>
+          <div class="box">
+            <h2>Fingerprint</h2>
+            <p class="text-justify">
+              Always verify this fingerprint after import:
+            </p>
+            <pre class="fingerprint">
 BED8 CCA8 0155 7974 725B  E8D9 3423 957F 0559 2942
-</pre>
-        </div>
-        <div class="box">
-          <h2>Copy my public key</h2>
-           <button class="copywrap" onclick="copyKey()">Copy</button>
-          <hr>
-          <pre id="pgpkey">
+</pre
+            >
+          </div>
+          <div class="box">
+            <h2>Copy my public key</h2>
+            <button class="copywrap" onclick="copyKey()">Copy</button>
+            <hr />
+            <pre id="pgpkey">
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 mDMEaQ7DBhYJKwYBBAHaRw8BAQdAe6LQwNk4EHjXA3110MlNdVS9VlLWeuIg+ycf
 tVRIZPy0LUFiYnkgSmFuZSBNb3J0b24gPGFiaWdhaWxAY2xvdmVyZGFsZWxhbmUu
@@ -59,55 +82,129 @@ Cn1dUoZ00W7WZfEZJbU6mBTfzJOUhxcA/17CD6hpetLkDCxC9ONZ0zT1R3eEwWjr
 zqAk5j6G5esB
 =IUzw
 -----END PGP PUBLIC KEY BLOCK-----
-</pre>
-        </div>
-        <div class="box">
-          <h2>Direct download (optional)</h2>
-          <p>You can also download my key directly:</p>
-          <pre>
+</pre
+            >
+          </div>
+          <div class="box">
+            <h2>Direct download (optional)</h2>
+            <p>You can also download my key directly:</p>
+            <pre>
 https://cloverdalelane.com/.well-known/openpgpkey/hu/f86kbuefhgbza7z9g6s179w45dyi1jay
-</pre>
-          <p>Import with:</p>
-          <pre>
+</pre
+            >
+            <p>Import with:</p>
+            <pre>
 gpg --import &lt;filename&gt;
-</pre>
-        </div>
-        <div class="box">
-          <p>If you receive a message claiming to be from me and the fingerprint differs, treat it as suspicious.</p>
-        </div>
-        <hr>
-        <p class="text-center"><small>© Abby Jane 2025<br>
-        <a href="#privacyModal" data-toggle="modal" data-target="#privacyModal">privacy policy</a></small></p>
-      </main>
-    </div>
-    <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">privacy policy.</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+</pre
+            >
           </div>
-          <div class="modal-body">
-            <p>I do not want your data.</p>
-            <p>I am not a fae trickster.</p>
-            <p>What are you a cop?</p>
-            <p>If you're a cop you have to tell me otherwise it's entrapment.</p>
+          <div class="box">
+            <p>
+              If you receive a message claiming to be from me and the
+              fingerprint differs, treat it as suspicious.
+            </p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <hr />
+          <p class="text-center">
+            <small
+              >© Abby Jane 2025<br />
+              <a
+                href="#privacyModal"
+                data-toggle="modal"
+                data-target="#privacyModal"
+                >privacy policy</a
+              ></small
+            >
+          </p>
+        </main>
+      </div>
+      <div
+        class="modal fade"
+        id="privacyModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title h5" id="exampleModalLabel">
+                privacy policy.
+              </h3>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>I do not want your data.</p>
+              <p>I am not a fae trickster.</p>
+              <p>What are you a cop?</p>
+              <p>
+                If you're a cop you have to tell me otherwise it's entrapment.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div><!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
-  <script>
-  const btn = document.getElementById('copyFp'); if (btn) {btn.addEventListener('click', async () => {const t = document.getElementById('fingerprint').textContent.trim(); try { await navigator.clipboard.writeText(t); alert('PGP fingerprint copied'); } catch { alert('Copy failed — select and copy manually.'); }});}
-  </script> 
-  <script>
-  function copyKey() {const text = document.getElementById("pgpkey").innerText; navigator.clipboard.writeText(text).then(() => {alert("Public key copied to clipboard.");  });}
-  function copyCmd() {const text = document.getElementById("gpgcmd").innerText; navigator.clipboard.writeText(text).then(() => {alert("GPG command copied to clipboard.");  });}
-  </script>
-</body>
+    <!-- Scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const btn = document.getElementById("copyFp");
+      if (btn) {
+        btn.addEventListener("click", async () => {
+          const t = document.getElementById("fingerprint").textContent.trim();
+          try {
+            await navigator.clipboard.writeText(t);
+            alert("PGP fingerprint copied");
+          } catch {
+            alert("Copy failed — select and copy manually.");
+          }
+        });
+      }
+    </script>
+    <script>
+      function copyKey() {
+        const text = document.getElementById("pgpkey").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("Public key copied to clipboard.");
+        });
+      }
+      function copyCmd() {
+        const text = document.getElementById("gpgcmd").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("GPG command copied to clipboard.");
+        });
+      }
+    </script>
+  </body>
 </html>
