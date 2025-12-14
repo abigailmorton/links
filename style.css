@@ -196,12 +196,38 @@ copy:hover { background: #000; }
   border: 1px solid rgba(183,101,91,.15);
 }
 
+#profile p {
+  line-height: 1.55;
+  font-size: 0.98rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 720px) {
+  #profile p { text-align: justify; text-justify: inter-word; hyphens: auto; }
+}
+
 /* Overall CV content width */
 .cv {
   max-width: 720px;
   margin: 40px auto;
   padding-left: 1.5rem;   /* one unified left edge */
   padding-right: 1.5rem;
+}
+
+/* Overall section spacing */
+.cv section {
+  margin-bottom: 1.25rem;   /* tighter than default */
+}
+
+/* Section headers */
+.cv section h2 {
+  margin-bottom: 0.5rem;    /* pull content closer to header */
+}
+
+/* Prevent extra space at the end of sections */
+.cv section > :last-child {
+  margin-bottom: 0;
 }
 
 /* Header block */
@@ -224,6 +250,7 @@ copy:hover { background: #000; }
 /* The lines under the name */
 .cv-line {
   margin: 0;
+  line-height: 1.4;
   font-size: 0.95rem;
 }
 
@@ -243,13 +270,54 @@ copy:hover { background: #000; }
 
 .cv ul {
   padding-left: 1.2rem;   /* control bullet indent */
+  margin-top: 0.25rem;
 }
 
 .cv li {
+  margin-bottom: 0.6rem;
   margin-left: 0;
+  line-height:1.4;
 }
 
 
+
+/* Role title*/
+.role h3 {
+  margin-top: 0rem;
+  margin-bottom: -0.5rem;
+  font-size: 1.05rem;
+}
+
+/* Office and years line */
+.role p em {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0.4rem;    /* tighten before bullets */
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Education Blocks */
+.degree {
+  margin-bottom: 0.75rem;
+}
+
+.degree h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+}
+
+.degree p em {
+  display: block;
+  margin: 0 0 0.2rem 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.degree p {
+  margin: 0;
+  font-size: 0.95rem;
+}
 
 .row { display:flex; gap:10px; flex-wrap: wrap; align-items: center; }
 .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
